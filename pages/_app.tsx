@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import withApollo from '../lib/withApollo';
+import withApollo from '../src/graphql/withApollo';
 
 class MyApp extends App<any> {
   render() {

@@ -1,15 +1,15 @@
-import * as React from 'react'
-import Link from 'next/link'
-import Layout from '../components/Layout'
-import { NextPage } from 'next'
+import * as React from 'react';
+import Link from 'next/link';
+import { NextPage } from 'next';
 import { useQuery } from '@apollo/react-hooks';
 
-import { POSTS_QUERY } from '../graphql/queries';
+import Layout from '../src/components/Layout';
 
-import { TPost } from '../interfaces';
+import { POSTS_QUERY } from '../src/graphql/queries';
+import { TPost } from '../src/interfaces';
 
 const IndexPage: NextPage = () => {
-  const { data, loading } = useQuery(POSTS_QUERY)
+  const { data, loading } = useQuery(POSTS_QUERY);
 
   if (loading) { return <div>Loading...</div> }
 
@@ -31,7 +31,7 @@ const IndexPage: NextPage = () => {
         ))}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
