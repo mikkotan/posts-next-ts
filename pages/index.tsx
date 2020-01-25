@@ -6,10 +6,13 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { POSTS_QUERY } from '../graphql/queries';
 
-const IndexPage: NextPage = () => {
-  const { data } = useQuery(POSTS_QUERY)
+import { TPost } from '../interfaces';
 
-  console.log('data', data)
+const IndexPage: NextPage = () => {
+  const { data, loading } = useQuery(POSTS_QUERY)
+
+  if (loading) { return <div>Loading...</div> }
+
   return (
     <Layout title="Home | Next.js + TypeScript Example">
       <h1>Hello Next.js 👋</h1>
@@ -18,6 +21,15 @@ const IndexPage: NextPage = () => {
           <a>About</a>
         </Link>
       </p>
+      <div>
+        {data.getPosts.map((post: TPost) => (
+          <div>
+            <li>Title: {post.title}</li>
+            <li>Description: {post.description}</li>
+            <br />
+          </div>
+        ))}
+      </div>
     </Layout>
   )
 }
