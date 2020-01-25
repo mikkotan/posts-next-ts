@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { NextPage } from 'next';
 import {
   Form,
   Select,
@@ -13,7 +12,7 @@ import {
 const FormItem = Form.Item;
 const Option = Select.Option;
 
-const AntdPage: NextPage = () => {
+const AntdPage: React.FunctionComponent = () => {
   return (
     <div style={{ marginTop: 100 }}>
       <Form layout="horizontal">
