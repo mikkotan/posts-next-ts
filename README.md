@@ -3,7 +3,7 @@
 ### Getting Started
 Clone the repo
 ```
-$ git clone 
+$ git clone git@github.com:michaelunltd/posts-next-ts.git
 ```
 
 Install dependencies
