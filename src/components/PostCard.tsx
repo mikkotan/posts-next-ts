@@ -64,7 +64,10 @@ const PostCard: React.FunctionComponent<Props> = ({ post }) => (
       </Link>
     </Header>
     <Description>
-      {post.description}
+      {post.description.length > 100
+        ? `${post.description.substring(0, 100)}...`
+        : post.description
+      }
     </Description>
   </Card>
 )

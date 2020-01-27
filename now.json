@@ -1,0 +1,18 @@
+{
+  "name": "posts-next-ts",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "env": {
+    "GRAPHQL_URL": "@graphql-url"
+  },
+  "build": {
+    "env": {
+      "GRAPHQL_URL": "@graphql-url"
+    }
+  }
+}

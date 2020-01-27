@@ -1,4 +1,6 @@
 /* eslint-disable */
+require('dotenv').config();
+
 const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
 const fs = require('fs')
@@ -37,4 +39,7 @@ module.exports = withLess({
     }
     return config
   },
+  env: {
+    GRAPHQL_URL: process.env.GRAPHQL_URL
+  }
 })

@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloLink } from 'apollo-boost';
 import { createHttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 
-const GRAPHQL_URL = 'http://localhost:5000/graphql';
+const GRAPHQL_URL = process.env.GRAPHQL_URL;
 
 const link: ApolloLink = createHttpLink({
   fetch,
